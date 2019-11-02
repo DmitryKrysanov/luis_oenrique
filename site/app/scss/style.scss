@@ -1,6 +1,544 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: aquamarine;
+
+@import "mixins";
+
+$WHITE_COLOR: #fff;
+$LIGHT_GRAY_COLOR: #f6f6f6;
+$GRAY_COLOR: #4d4d4d;
+$DARK_GRAY_COLOR: #212121;
+$BLACK_COLOR: #000;
+
+$FONT_FAMILY: 'Asap', sans-serif;
+
+a:hover {
+  text-decoration: none;
+  color: $BLACK_COLOR;
 }
 
+//fonts
+
+h1 {
+  font-family: $FONT_FAMILY;
+  font-size: 90px;
+  font-weight: bold;
+  color: $GRAY_COLOR;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: $FONT_FAMILY;
+  font-size: 46px;
+  color: $GRAY_COLOR;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: $FONT_FAMILY;
+  font-size: 30px;
+  color: $DARK_GRAY_COLOR;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: $FONT_FAMILY;
+  font-size: 22px;
+  color: $GRAY_COLOR;
+}
+
+h5 {
+  font-family: $FONT_FAMILY;
+  font-size: 12px;
+  color: $DARK_GRAY_COLOR;
+  font-style: italic;
+}
+
+p {
+  font-family: $FONT_FAMILY;
+  font-size: 16px;
+  color: $GRAY_COLOR;
+  line-height: 26px;
+}
+
+//fontas end
+
+//buttons
+
+.solid-btn {
+  text-align: center;
+  font-family: $FONT_FAMILY;
+  font-size: 16px;
+  font-weight: 500;
+  color: $GRAY_COLOR;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  background-color: $WHITE_COLOR;
+  box-shadow: 0px 18px 26.68px 2.32px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  min-width: 162px;
+  &:hover {
+    box-shadow: none;
+  }
+  @include max-screen($MOBILE) {
+    width: 100%;
+  }
+}
+
+.bordered-btn {
+  text-align: center;
+  font-family: $FONT_FAMILY;
+  font-size: 16px;
+  font-weight: 500;
+  color: $GRAY_COLOR;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  border: solid 1px $GRAY_COLOR;
+  display: inline-block;
+  min-width: 162px;
+  @include max-screen($MOBILE) {
+    width: 100%;
+  }
+  &:hover {
+    text-align: center;
+    font-family: $FONT_FAMILY;
+    font-size: 16px;
+    font-weight: 500;
+    color: $WHITE_COLOR;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    background-color: $GRAY_COLOR;
+    display: inline-block;
+    min-width: 162px;
+  }
+}
+
+//buttons end
+
+//navbar
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+  .navbar-brand {
+    height: auto;
+  }
+  li {
+    a {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.nav__opened {
+  background-color: #fff;
+  transition: background-color 200ms ease-in-out;
+}
+
+.navbar-toggle {
+  margin-bottom: 20px;
+}
+
+.navbar-toggle .icon-bar {
+  margin-top: 18px;
+  background-color: $BLACK_COLOR;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: transparent;
+}
+
+.navbar-right {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  li {
+    padding: 15px 0;
+    margin-left: 40px;
+    a {
+      text-transform: uppercase;
+      color: $DARK_GRAY_COLOR;
+      padding: 0;
+      border-bottom: transparent;
+      &:hover {
+        border-bottom: 1px solid $DARK_GRAY_COLOR;
+      }
+    }
+  }
+}
+
+.navbar-fixed-top.scrolled {
+  background-color: #fff !important;
+  box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 200ms linear;
+}
+
+//navbar end
+
+//sections
+
+.main {
+  background-image: url("../images/main_bg.png");
+  background-size: cover;
+  background-position: center center;
+  //height: 750px;
+  padding-top: 266px;
+  padding-bottom: 300px;
+  @include max-screen($MOBILE) {
+    padding-top: 180px;
+  }
+  h4 {
+    color: #949494;
+  }
+  .solid-btn {
+    margin-right: 20px;
+  }
+  @include max-screen($TABLET) {
+    background-position: center center;
+  }
+  @include max-screen($MOBILE) {
+    background-position: center center;
+    h1 {
+        font-size: 70px;
+    }
+    .solid-btn {
+      margin-bottom: 30px;
+    }
+  }
+  .container {
+    .content {
+      h4 {
+        margin-bottom: 28px;
+        @include max-screen($MOBILE) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.know_more_about_me {
+  padding-top: 110px;
+  padding-bottom: 126px;
+  @include max-screen($TABLET-PRO) {
+    padding-top: 20px;
+  }
+  .know_more_about_me__image {
+    img {
+      width: 100%;
+    }
+    @include max-screen($TABLET_PRO) {
+      text-align: center;
+      img {
+        margin-top: 60px;
+      }
+    }
+  }
+  h2 {
+    margin-top: 70px;
+    &:before {
+      content: " ";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: $GRAY_COLOR;
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    margin-bottom: 36px;
+  }
+}
+
+.services, .my-skills, .portfolio, .testimonials {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  text-align: center;
+  h2 {
+    margin-bottom: 60px;
+    &:before {
+      content: " ";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: $GRAY_COLOR;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.services, .portfolio {
+  background-color: $LIGHT_GRAY_COLOR;
+}
+
+.services__item {
+  text-align: center;
+  margin-bottom: 88px;
+  h3 {
+    color: $GRAY_COLOR;
+    text-transform: capitalize;
+  }
+  &:nth-child(5), &:nth-child(6), &:last-child {
+    margin-bottom: 0;
+  }
+  @include max-screen($TABLET_PRO) {
+    &:nth-child(5) {
+      margin-bottom: 88px;
+    }
+    &:nth-child(6), &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include max-screen($MOBILE) {
+    &:nth-child(6) {
+      margin-bottom: 88px;
+    }
+  }
+}
+
+.my-skills {
+  .my-skills__products {
+    max-width: 620px;
+    margin: auto;
+    padding-left: 18px;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 30px;
+      &:last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.portfolio__item {
+  margin-bottom: 30px;
+  a {
+    img {
+      width: 100%;
+      &:hover {
+        box-shadow: 0px 0px 36.75px 12.25px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+.testimonials {
+  @include max-screen($MOBILE) {
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+.testimonials__content {
+  border: solid 1px $GRAY_COLOR;
+  padding-top: 82px;
+  padding-bottom: 82px;
+  .owl-carousel {
+    height: 100%;
+    width: 100%;
+    .slide {
+      display: flex;
+      justify-content: center;
+      @include max-screen($MOBILE) {
+        flex-direction: column;
+      }
+      .slide__image {
+        margin-right: 30px;
+        img {
+          max-width: 160px;
+        }
+        @include max-screen($MOBILE) {
+          margin: auto;
+          margin-bottom: 30px;
+        }
+      }
+      .slide__content {
+        text-align: left;
+        max-width: 575px;
+        h3 {
+          color: $DARK_GRAY_COLOR;
+        }
+        h5 {
+          color: $DARK_GRAY_COLOR;
+        }
+        @include max-screen($MOBILE) {
+          text-align: center;
+        }
+        h3 {
+          margin-top: 0;
+        }
+        p {
+          color: #7a7a7a;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+  width: 13px;
+  height: 13px;
+  background-color: $DARK_GRAY_COLOR;
+  margin: 0 4px;
+}
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+  background-color: $WHITE_COLOR;
+  width: 13px;
+  height: 13px;
+  margin: 0 2px;
+  border: solid 1px $DARK_GRAY_COLOR;
+}
+
+.owl-dots {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+}
+
+.owl-carousel button.owl-dot.active {
+  background-color: $DARK_GRAY_COLOR;
+}
+
+.funfact {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: $LIGHT_GRAY_COLOR;
+  margin-bottom: 150px;
+  h3 {
+    font-weight: 600;
+  }
+  .funfact__item {
+    text-align: center;
+    @include max-screen($TABLET_PRO) {
+      margin-bottom: 88px;
+      &:nth-child(3), &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include max-screen($MOBILE) {
+      &:nth-child(3) {
+        margin-bottom: 88px;
+      }
+    }
+    h4 {
+      text-transform: uppercase;
+      font-weight: 400;
+      color: $DARK_GRAY_COLOR;
+    }
+  }
+}
+
+.say_hello {
+  padding-top: 145px;
+  padding-bottom: 30px;
+  background-image: url("../images/footer_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  h2 {
+    color: white;
+    margin-bottom: 70px;
+    &:before {
+      content: " ";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: $WHITE_COLOR;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
+  form {
+    input {
+      line-height: 58px;
+      width: 100%;
+      border: none;
+      margin-bottom: 30px;
+      padding-left: 10px;
+      box-sizing: border-box;
+      &::placeholder {
+        font-family: $FONT_FAMILY;
+        font-size: 16px;
+        color: $DARK_GRAY_COLOR;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 207px;
+      display: block;
+      padding-top: 22px;
+      padding-left: 10px;
+      margin-bottom: 30px;
+      resize: none;
+      &::placeholder {
+        font-family: $FONT_FAMILY;
+        font-size: 16px;
+        color: $DARK_GRAY_COLOR;
+      }
+    }
+    button {
+      display: block;
+      margin: auto;
+      padding: 20px 30px;
+      background-color: $WHITE_COLOR;
+      font-family: $FONT_FAMILY;
+      font-size: 16px;
+      font-weight: 500;
+      color: $BLACK_COLOR;
+      text-transform: uppercase;
+      &:after {
+        content: url("../images/send_icon.png");
+        display: inline-block;
+        margin-left: 6px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.social-btn {
+  width: 27px;
+  line-height: 27px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  color: $GRAY_COLOR;
+  background-color: $WHITE_COLOR;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    background-color: #0084b4;
+    color: $WHITE_COLOR;
+  }
+}
+.social-buttons-bar {
+  margin-top: 58px;
+  border-top: solid 1px $WHITE_COLOR;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  .social-buttons {
+    text-align: left;
+    padding-left: 0;
+    @include max-screen($MOBILE) {
+      text-align: center;
+      margin-bottom: 15px;
+      padding-left: auto;
+    }
+  }
+  .all-right-reserved {
+    font-size: 16px;
+    color: $WHITE_COLOR;
+  }
+}
+
+//sections end

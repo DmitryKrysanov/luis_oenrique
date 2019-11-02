@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/DmitryKrysanov/luis_oenrique/issues"
   },
-  "homepage": "https://github.com/DmitryKrysanov/luis_oenrique#readme"
+  "homepage": "https://github.com/DmitryKrysanov/luis_oenrique#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
 }

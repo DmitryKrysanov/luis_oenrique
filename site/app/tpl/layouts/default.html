@@ -1,9 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.min.css">
-    <title>{{ title }}</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luis Oenrique</title>
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,500,500i,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script
+            src="https://code.jquery.com/jquery-2.2.1.js"
+            integrity="sha256-eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc="
+            crossorigin="anonymous"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        $(function () {
+        $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+        });
+    </script>
+    <script>
+        $(function(){
+            $('.navbar-toggle').click(function(){
+                $('.navbar-fixed-top').toggleClass('nav__opened');
+            });
+        })
+        // $(window).click(function(event) {
+        //     // $('.navbar-brand').hide();
+        //     $('.navbar-fixed-top').toggleClass('nav__opened');
+        // });
+    </script>
+    <script>
+        window.onload = function () {
+
+            CanvasJS.addCultureInfo("es",
+                {
+                    decimalSeparator: ",",// Observe ToolTip Number Format
+                    digitGroupSeparator: ".", // Observe axisY labels
+                    days: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "sábado", "sábado"]
+
+                });
+            
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: false,
+                backgroundColor: "#fafafa",
+                culture: "es",
+                toolTip:{
+                    enabled: false,
+                },
+                axisX:{
+                    valueFormatString:"DDDD"
+                },
+                axisY: {
+                    valueFormatString: "#0",
+                    suffix: "%"
+                },
+                data: [{
+                    type: "splineArea",
+                    color: "rgba(77,77,77,1)",
+                    markerSize: 15,
+                    lineColor: "rgba(255,255,255,1)",
+                    yValueFormatString: "none",
+                    dataPoints: [
+                        { label: " ", y: 0 },
+                        { label: " ", y: 85 },
+                        { label: " ", y: 60 },
+                        { label: " ", y: 70 },
+                        { label: " ", y: 55 },
+                        { label: " ", y: 95 },
+                        { label: " ", y: 50 },
+                        { label: " ", y: 83 },
+                        { label: " ", y: 0 }
+                    ]
+                }]
+            });
+            chart.render();
+        }
+    </script>
 </head>
 <body>
 

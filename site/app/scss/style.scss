@@ -1,117 +1,17 @@
 
+@import "guideline";
 @import "mixins";
 
-$WHITE_COLOR: #fff;
-$LIGHT_GRAY_COLOR: #f6f6f6;
-$GRAY_COLOR: #4d4d4d;
-$DARK_GRAY_COLOR: #212121;
-$BLACK_COLOR: #000;
+body {
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+}
 
-$FONT_FAMILY: 'Asap', sans-serif;
 
 a:hover {
   text-decoration: none;
   color: $BLACK_COLOR;
 }
-
-//fonts
-
-h1 {
-  font-family: $FONT_FAMILY;
-  font-size: 90px;
-  font-weight: bold;
-  color: $GRAY_COLOR;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-family: $FONT_FAMILY;
-  font-size: 46px;
-  color: $GRAY_COLOR;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-h3 {
-  font-family: $FONT_FAMILY;
-  font-size: 30px;
-  color: $DARK_GRAY_COLOR;
-  text-transform: uppercase;
-}
-
-h4 {
-  font-family: $FONT_FAMILY;
-  font-size: 22px;
-  color: $GRAY_COLOR;
-}
-
-h5 {
-  font-family: $FONT_FAMILY;
-  font-size: 12px;
-  color: $DARK_GRAY_COLOR;
-  font-style: italic;
-}
-
-p {
-  font-family: $FONT_FAMILY;
-  font-size: 16px;
-  color: $GRAY_COLOR;
-  line-height: 26px;
-}
-
-//fontas end
-
-//buttons
-
-.solid-btn {
-  text-align: center;
-  font-family: $FONT_FAMILY;
-  font-size: 16px;
-  font-weight: 500;
-  color: $GRAY_COLOR;
-  text-transform: uppercase;
-  padding: 20px 30px;
-  background-color: $WHITE_COLOR;
-  box-shadow: 0px 18px 26.68px 2.32px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  min-width: 162px;
-  &:hover {
-    box-shadow: none;
-  }
-  @include max-screen($MOBILE) {
-    width: 100%;
-  }
-}
-
-.bordered-btn {
-  text-align: center;
-  font-family: $FONT_FAMILY;
-  font-size: 16px;
-  font-weight: 500;
-  color: $GRAY_COLOR;
-  text-transform: uppercase;
-  padding: 20px 30px;
-  border: solid 1px $GRAY_COLOR;
-  display: inline-block;
-  min-width: 162px;
-  @include max-screen($MOBILE) {
-    width: 100%;
-  }
-  &:hover {
-    text-align: center;
-    font-family: $FONT_FAMILY;
-    font-size: 16px;
-    font-weight: 500;
-    color: $WHITE_COLOR;
-    text-transform: uppercase;
-    padding: 20px 30px;
-    background-color: $GRAY_COLOR;
-    display: inline-block;
-    min-width: 162px;
-  }
-}
-
-//buttons end
 
 //navbar
 
@@ -179,7 +79,6 @@ p {
   background-image: url("../images/main_bg.png");
   background-size: cover;
   background-position: center center;
-  //height: 750px;
   padding-top: 266px;
   padding-bottom: 300px;
   @include max-screen($MOBILE) {
@@ -188,7 +87,7 @@ p {
   h4 {
     color: #949494;
   }
-  .solid-btn {
+  .primary-btn {
     margin-right: 20px;
   }
   @include max-screen($TABLET) {
@@ -199,7 +98,7 @@ p {
     h1 {
         font-size: 70px;
     }
-    .solid-btn {
+    .primary-btn {
       margin-bottom: 30px;
     }
   }
@@ -465,8 +364,6 @@ p {
       padding-left: 10px;
       box-sizing: border-box;
       &::placeholder {
-        font-family: $FONT_FAMILY;
-        font-size: 16px;
         color: $DARK_GRAY_COLOR;
       }
     }
@@ -479,8 +376,6 @@ p {
       margin-bottom: 30px;
       resize: none;
       &::placeholder {
-        font-family: $FONT_FAMILY;
-        font-size: 16px;
         color: $DARK_GRAY_COLOR;
       }
     }
@@ -489,8 +384,6 @@ p {
       margin: auto;
       padding: 20px 30px;
       background-color: $WHITE_COLOR;
-      font-family: $FONT_FAMILY;
-      font-size: 16px;
       font-weight: 500;
       color: $BLACK_COLOR;
       text-transform: uppercase;
@@ -509,7 +402,6 @@ p {
   line-height: 27px;
   text-align: center;
   display: inline-block;
-  font-size: 16px;
   color: $GRAY_COLOR;
   background-color: $WHITE_COLOR;
   margin-right: 10px;
@@ -536,7 +428,6 @@ p {
     }
   }
   .all-right-reserved {
-    font-size: 16px;
     color: $WHITE_COLOR;
   }
 }

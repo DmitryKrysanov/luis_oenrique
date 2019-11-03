@@ -1,0 +1,91 @@
+$WHITE_COLOR: #fff;
+$LIGHT_GRAY_COLOR: #f6f6f6;
+$GRAY_COLOR: #4d4d4d;
+$DARK_GRAY_COLOR: #212121;
+$BLACK_COLOR: #000;
+
+//fonts
+
+h1 {
+    font-size: 90px;  
+    font-weight: bold;
+    color: $GRAY_COLOR;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    font-size: 46px;
+    color: $GRAY_COLOR;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 30px;
+    color: $DARK_GRAY_COLOR;
+    text-transform: uppercase;
+  }
+  
+  h4 {
+    font-size: 22px;
+    color: $GRAY_COLOR;
+  }
+  
+  h5 {
+    font-size: 12px;
+    color: $DARK_GRAY_COLOR;
+    font-style: italic;
+  }
+  
+  p {
+    color: $GRAY_COLOR;
+    line-height: 26px;
+  }
+  
+  //fonts end
+
+//buttons
+
+.primary-btn {
+    text-align: center;
+    font-weight: 500;
+    color: $GRAY_COLOR;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    background-color: $WHITE_COLOR;
+    box-shadow: 0px 18px 26.68px 2.32px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    min-width: 162px;
+    &:hover {
+      box-shadow: none;
+    }
+    @include max-screen($MOBILE) {
+      width: 100%;
+    }
+  }
+
+.secondary-btn {
+    text-align: center;
+    font-weight: 500;
+    color: $GRAY_COLOR;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    border: solid 1px $GRAY_COLOR;
+    display: inline-block;
+    min-width: 162px;
+    @include max-screen($MOBILE) {
+      width: 100%;
+    }
+    &:hover {
+      text-align: center;
+      font-weight: 500;
+      color: $WHITE_COLOR;
+      text-transform: uppercase;
+      padding: 20px 30px;
+      background-color: $GRAY_COLOR;
+      display: inline-block;
+      min-width: 162px;
+    }
+  }
+  
+  //buttons end
